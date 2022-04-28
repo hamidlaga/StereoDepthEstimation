@@ -1,8 +1,8 @@
 <div align="center">
 
-# Image-based 3D Object Reconstruction: State-of-the-Art and Trends in the Deep Learning era
+# A Survey on Deep Learning Techniques for Stereo-based Depth Estimation
 
-[Xianfeng Han](https://scholar.google.com/citations?user=4FaCTFgAAAAJ&hl=en) · [Hamid Laga](https://sites.google.com/view/hamidlaga) · [Mohammed Bennamoun](https://research-repository.uwa.edu.au/en/persons/mohammed-bennamoun) 
+[Hamid Laga](https://sites.google.com/view/hamidlaga) · [Laurent Valentin Jospin](https://scholar.google.com/citations?user=qReElm8AAAAJ&hl=en) · [Farid Boussaid](https://research-repository.uwa.edu.au/en/persons/farid-boussaid) · [Mohammed Bennamoun](https://research-repository.uwa.edu.au/en/persons/mohammed-bennamoun) 
 
 ### [Paper](https://ieeexplore.ieee.org/abstract/document/8908779) | [Abstract](#abstract) | [Citation](#citation) | [Chronological Overview](#overview) | [Updates](#updates)  | [Contributors](#contributors)
 
@@ -11,66 +11,57 @@
 
 ## Abstract
 
-3D reconstruction is a longstanding ill-posed problem, which has been explored for decades by the computer vision, computer graphics, and machine learning communities. Since 2015, image-based 3D reconstruction using convolutional neural networks (CNN) has attracted increasing interest and demonstrated an impressive performance. Given this new era of rapid evolution, this article provides a comprehensive survey of the recent developments in this field. We focus on the works which use deep learning techniques to estimate the 3D shape of generic objects either from a single or multiple RGB images. We organize the literature based on the shape representations, the network architectures, and the training mechanisms they use. While this survey is intended for methods which reconstruct generic objects, we also review some of the recent works which focus on specific object classes such as human body shapes and faces. We provide an analysis and comparison of the performance of some key papers, summarize some of the open problems in this field, and discuss promising directions for future research.
+Estimating depth from RGB images is a long-standing ill-posed problem, which has been explored for decades by the computer vision, graphics, and machine learning communities. Among the existing techniques, stereo matching remains one of the most widely used in the literature due to its strong connection to the human binocular system. Traditionally, stereo-based depth estimation has been addressed through matching hand-crafted features across multiple images. Despite the extensive amount of research, these traditional techniques still suffer in the presence of highly textured areas, large uniform regions, and occlusions. Motivated by their growing success in solving various 2D and 3D vision problems, deep learning for stereo-based depth estimation has attracted a growing interest from the community, with more than 150 papers published in this area between 2014 and 2019. This new generation of methods has demonstrated a significant leap in performance, enabling applications such as autonomous driving and augmented reality. In this paper, we provide a comprehensive survey of this new and continuously growing field of research, summarize the most commonly used pipelines, and discuss their benefits and limitations. In retrospect of what has been achieved so far, we also conjecture what the future may hold for deep learning-based stereo for depth estimation research.
 
 This repository will be continuously maintained. Please feel free to create issues if you have any suggestions!
 
 ```
 Organization of the Survey
 ├── Introduction
-├── Problem Statement and Taxonomy
-├── The Encoding Stage
-│   ├── Discrete Latent Spaces
-│   ├── Continuous Latent Spaces
-│   ├── Hierarchical Latent Spaces
-│   └── Desentangled Representation
-├── Volumetric Decoding
-│   ├── Volumetric Representations of 3D Shapes
-│   ├── Low Resolution 3D Volume Reconstruction
-│   ├── High Resolution 3D Volume Reconstruction
-│   │   ├── Space Partitioning
-│   │   ├── Occupancy Networks
-│   │   ├── Shape Partioning
-│   │   ├── Subspace Parameterization
-│   │   └── Coarse-to-fine Refinement
-│   └── Deep  Marching Cubes
-├── 3D Surface Decoding
-│   ├──  Parameterization-Based 3D Reconstruction
-│   ├──  Deformation-Based 3D Reconstruction
-│   │   ├── Deformation Models
-│   │   ├── Defining the Template
-│   │   └── network Architectures
-│   ├──Point-Based Techniques
-│   │   ├──  Representations
-│   │   └──  network Architectures
-├── Leveraging Other Cues
-│   ├──  Intermediating
-│   └──  Exploitng Spatio-Temporal Correlations
-├── Training
-│   ├──  Degree of Supervision
-│   │   ├── Training with 3D Supervision
-│   │   └── Training with 2D Supervision
-│   ├──  Training with video Supervision
-│   ├──  Training Procedure
-│   │   ├── Joint 2D-3D Embedding
-│   │   ├── Adversarial Training
-│   │   └── Joint Training with other Tasks
-├── Applications and Special Cases
-│   ├──  3D Human Reconstruction
-│   │   ├── Parametric Methods
-│   │   ├── Volumetric Methods
-│   ├──  3D Face Reconstruction
-│   │   ├── Network Architectures
-│   │   ├── Training and Supervision
-│   │   ├── Model-Free Approaches
-│   └──  3D Scene Parsing
+├── Scope and Taxonomy
 ├── Datasets
-├── Performance Comparison
-│   ├──  Accuracy Metrics and Performance Criteria
-│   │   ├── Accuracy Metrics
-│   │   ├── Performance Criteria
-│   └──  Comparison and Discussion
-└── Conclusion and Future Directions
+├── Depth by Stereo Matching
+│   ├── Learning Feature Extraction and Matching
+│   ├── Regularization and Disparity Estimation
+├── End-to-end Depth from Stereo
+│   ├── Feature Learning
+│   ├── Cost Volume Construction
+│   │   ├── 3D Cost Volumes
+│   │   ├── 4D Cost Volumes
+│   ├── Disparity Computation
+│   ├── Variants
+│   │   ├── Learning to Infer High Resolution Disparity Maps
+│   │   ├── Learning for Completion and Denoising
+│   │   ├── Learning for Realtime Processing
+│   ├── Learning Confidence Maps
+│   │   ├── Confidence From Left-Right Consistency Check
+│   │   ├── Confidence From a Single Raw Disparity Map
+│   │   ├── Confidence Map From Matching Densities
+│   │   ├── Local versus Global Reasoning
+│   │   └──  Combining Multiple Estimators
+├── Learning Multiview Stereo
+│   ├── Volumetric Representations
+│   └── Plane-Sweep Volume Representations
+├── Traininf End-to-End Stereo Methods
+│   ├── Supervision Methods
+│   │   ├── 3D Supervision Methods
+│   │   ├── Self Supervision Methods
+│   │   └── Weakly Supervision Methods
+│   ├── Incorporating Additional Cues
+│   │   ├── Smoothness
+│   │   ├── Consistency
+│   │   ├── Maximum-Depth Heuristic
+│   │   └── Scale-Invariant Gradient Loss
+│   ├──  Domain Adaptation and Transfer Learning
+│   │   ├── Adaptation by Fine-Tuning
+│   │   └── Adaptation by Data Transformation
+│   └── Learning the Network Architecture
+├── Discussion and Comparison
+│   ├── Evaluation Protocol
+│   ├── Computation Time and Memory Footprint
+│   └── Reconstruction Accuracy
+├── Future Research Directions
+└── Conclusion
 ```
 
 ## Citation
@@ -78,15 +69,15 @@ Organization of the Survey
 If our survey helps in your research, please consider citing the following paper:
 
 ```bibtex
-    @article{han2019image,
-        title={Image-based 3D object reconstruction: State-of-the-art and trends in the deep learning era},
-        author={Han, Xian-Feng and Laga, Hamid and Bennamoun, Mohammed},
-        journal={IEEE Transactions on Pattern Analysis and Machine Itelligence},
-        volume={43},
-        number={5},
-        pages={1578--1604},
-        year={2019},
-        publisher={IEEE}
+    @article{laga2022survey,
+      title={A survey on deep learning techniques for stereo-based depth estimation},
+      author={Laga, Hamid and Jospin, Laurent Valentin and Boussaid, Farid and Bennamoun, Mohammed},
+      journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+      year={2022},
+      Volume = {44},
+      issue  ={4},
+      pages = {1738--1764},
+      publisher={IEEE}
     }
 ```
 
@@ -103,7 +94,8 @@ We are currently collecting the papers that appeared between 2020 and 2022. Stay
 ## Contributors
 
 - [Hamid Laga](https://sites.google.com/view/hamidlaga) (Murdoch University, Australia)
-- [Xianfeng Han](https://scholar.google.com/citations?user=4FaCTFgAAAAJ&hl=en) (South West University, China)
+- [Laurent Valentin Jospin](https://scholar.google.com/citations?user=qReElm8AAAAJ&hl=en) (University of Western Australia, Australia)
+- [Farid Boussaid](https://research-repository.uwa.edu.au/en/persons/farid-boussaid) (University of Western Australia, Australia)
 - [Mohammed Bennamoun](https://research-repository.uwa.edu.au/en/persons/mohammed-bennamoun) (University of Western Australia, Australia)
 
 
