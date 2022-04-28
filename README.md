@@ -4,7 +4,7 @@
 
 [Hamid Laga](https://sites.google.com/view/hamidlaga) · [Laurent Valentin Jospin](https://scholar.google.com/citations?user=qReElm8AAAAJ&hl=en) · [Farid Boussaid](https://research-repository.uwa.edu.au/en/persons/farid-boussaid) · [Mohammed Bennamoun](https://research-repository.uwa.edu.au/en/persons/mohammed-bennamoun) 
 
-### [Paper](https://ieeexplore.ieee.org/abstract/document/8908779) | [Abstract](#abstract) | [Citation](#citation) | [Chronological Overview](#overview) | [Updates](#updates)  | [Contributors](#contributors)
+### [Paper](https://ieeexplore.ieee.org/abstract/document/9233988) | [Supplementary Material](https://ieeexplore.ieee.org/abstract/document/9233988/media#media) | [Abstract](#abstract) | [Citation](#citation) | [Chronological Overview](#overview) | [Updates](#updates)  | [Contributors](#contributors)
 
 </div>
 
