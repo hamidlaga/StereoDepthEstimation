@@ -4,7 +4,8 @@
 
 [Hamid Laga](https://sites.google.com/view/hamidlaga) · [Laurent Valentin Jospin](https://scholar.google.com/citations?user=qReElm8AAAAJ&hl=en) · [Farid Boussaid](https://research-repository.uwa.edu.au/en/persons/farid-boussaid) · [Mohammed Bennamoun](https://research-repository.uwa.edu.au/en/persons/mohammed-bennamoun) 
 
-IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
+IEEE Transactions on Pattern Analysis and Machine Intelligence, 44(4), pp. 1738-1764, 2022
+
 
 ### [Paper](https://ieeexplore.ieee.org/abstract/document/9233988) | [Supplementary Material](https://ieeexplore.ieee.org/abstract/document/9233988/media#media) | [Abstract](#abstract) | [Citation](#citation) | [Chronological Overview](#overview) | [Updates](#updates)  | [Contributors](#contributors)
 
@@ -75,10 +76,10 @@ If our survey helps in your research, please consider citing the following paper
       title={A survey on deep learning techniques for stereo-based depth estimation},
       author={Laga, Hamid and Jospin, Laurent Valentin and Boussaid, Farid and Bennamoun, Mohammed},
       journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-      year={2022},
       Volume = {44},
       issue  ={4},
       pages = {1738--1764},
+      year={2022},
       publisher={IEEE}
     }
 ```
