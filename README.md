@@ -6,6 +6,7 @@
 
 IEEE Transactions on Pattern Analysis and Machine Intelligence, 44(4), pp. 1738-1764, 2022
 
+<p align="center"> <img src="./assets/pipeline.png" width="95%"> </p>
 
 ### [Paper](https://ieeexplore.ieee.org/abstract/document/9233988) | [Supplementary Material](https://ieeexplore.ieee.org/abstract/document/9233988/media#media) | [Abstract](#abstract) | [Citation](#citation) | [Chronological Overview](#overview) | [Updates](#updates)  | [Contributors](#contributors)
 
